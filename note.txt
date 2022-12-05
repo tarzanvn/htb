@@ -1,0 +1,4 @@
+# notes
+
+## pri-esc
+    - linux kernel: https://www.linuxkernelcves.com/cves
