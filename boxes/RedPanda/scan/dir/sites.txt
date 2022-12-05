@@ -1,0 +1,3 @@
+http://redpanda.htb:8080/search
+http://redpanda.htb:8080/stats
+http://redpanda.htb:8080/error

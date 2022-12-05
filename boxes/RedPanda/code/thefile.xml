@@ -1,0 +1,16 @@
+<?xml version="1.1" ?>
+<!DOCTYPE naughtyxml [
+    <!ENTITY nbsp "&#0160;">
+    <!ENTITY copy "&#0169;">
+    <!ENTITY rfile SYSTEM "secret.txt">
+]>
+<data>
+    <country name="Liechtenstein">
+        <rank>1&nbsp;&gt;</rank>
+        <year>2008&copy;</year>
+        <gdppc>141100</gdppc>
+        <neighbor name="Austria" direction="E"/>
+        <neighbor name="Switzerland" direction="W"/>
+        <file>&rfile;</file>
+    </country>
+</data>

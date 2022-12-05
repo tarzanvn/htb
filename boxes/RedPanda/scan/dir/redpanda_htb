@@ -1,0 +1,5 @@
+[url] - [code-200] - http://redpanda.htb:8080/
+[form] - http://redpanda.htb:8080/
+[url] - [code-405] - http://redpanda.htb:8080/search
+[url] - [code-200] - http://redpanda.htb:8080/stats
+[form] - http://redpanda.htb:8080/stats

@@ -1,0 +1,100 @@
+_______________________________________________________________
+         __          _______   _____
+         \ \        / /  __ \ / ____|
+          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
+           \ \/  \/ / |  ___/ \___ \ / __|/ _` | '_ \
+            \  /\  /  | |     ____) | (__| (_| | | | |
+             \/  \/   |_|    |_____/ \___|\__,_|_| |_|
+
+         WordPress Security Scanner by the WPScan Team
+                         Version 3.8.22
+                               
+       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart
+_______________________________________________________________
+
+[i] Updating the Database ...
+[i] Update completed.
+
+[+] URL: http://metapress.htb/ [10.10.11.186]
+[+] Started: Sat Nov 26 19:37:24 2022
+
+Interesting Finding(s):
+
+[+] Headers
+ | Interesting Entries:
+ |  - Server: nginx/1.18.0
+ |  - X-Powered-By: PHP/8.0.24
+ | Found By: Headers (Passive Detection)
+ | Confidence: 100%
+
+[+] robots.txt found: http://metapress.htb/robots.txt
+ | Interesting Entries:
+ |  - /wp-admin/
+ |  - /wp-admin/admin-ajax.php
+ | Found By: Robots Txt (Aggressive Detection)
+ | Confidence: 100%
+
+[+] XML-RPC seems to be enabled: http://metapress.htb/xmlrpc.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+ | References:
+ |  - http://codex.wordpress.org/XML-RPC_Pingback_API
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_ghost_scanner/
+ |  - https://www.rapid7.com/db/modules/auxiliary/dos/http/wordpress_xmlrpc_dos/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_xmlrpc_login/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_pingback_access/
+
+[+] WordPress readme found: http://metapress.htb/readme.html
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+
+[+] The external WP-Cron seems to be enabled: http://metapress.htb/wp-cron.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 60%
+ | References:
+ |  - https://www.iplocation.net/defend-wordpress-from-ddos
+ |  - https://github.com/wpscanteam/wpscan/issues/1299
+
+[+] WordPress version 5.6.2 identified (Insecure, released on 2021-02-22).
+ | Found By: Rss Generator (Passive Detection)
+ |  - http://metapress.htb/feed/, <generator>https://wordpress.org/?v=5.6.2</generator>
+ |  - http://metapress.htb/comments/feed/, <generator>https://wordpress.org/?v=5.6.2</generator>
+
+[+] WordPress theme in use: twentytwentyone
+ | Location: http://metapress.htb/wp-content/themes/twentytwentyone/
+ | Last Updated: 2022-11-02T00:00:00.000Z
+ | Readme: http://metapress.htb/wp-content/themes/twentytwentyone/readme.txt
+ | [!] The version is out of date, the latest version is 1.7
+ | Style URL: http://metapress.htb/wp-content/themes/twentytwentyone/style.css?ver=1.1
+ | Style Name: Twenty Twenty-One
+ | Style URI: https://wordpress.org/themes/twentytwentyone/
+ | Description: Twenty Twenty-One is a blank canvas for your ideas and it makes the block editor your best brush. Wi...
+ | Author: the WordPress team
+ | Author URI: https://wordpress.org/
+ |
+ | Found By: Css Style In Homepage (Passive Detection)
+ | Confirmed By: Css Style In 404 Page (Passive Detection)
+ |
+ | Version: 1.1 (80% confidence)
+ | Found By: Style (Passive Detection)
+ |  - http://metapress.htb/wp-content/themes/twentytwentyone/style.css?ver=1.1, Match: 'Version: 1.1'
+
+[+] Enumerating All Plugins (via Passive Methods)
+
+[i] No plugins Found.
+
+[+] Enumerating Config Backups (via Passive and Aggressive Methods)
+ Checking Config Backups - Time: 00:00:00 <> (0 / 137)  0.00%  ETA Checking Config Backups - Time: 00:00:00 <> (1 / 137)  0.72%  ETA Checking Config Backups - Time: 00:00:01 <> (6 / 137)  4.37%  ETA Checking Config Backups - Time: 00:00:01 <> (11 / 137)  8.02%  ET Checking Config Backups - Time: 00:00:02 <> (16 / 137) 11.67%  ET Checking Config Backups - Time: 00:00:02 <> (17 / 137) 12.40%  ET Checking Config Backups - Time: 00:00:02 <> (21 / 137) 15.32%  ET Checking Config Backups - Time: 00:00:02 <> (25 / 137) 18.24%  ET Checking Config Backups - Time: 00:00:03 <> (26 / 137) 18.97%  ET Checking Config Backups - Time: 00:00:03 <> (30 / 137) 21.89%  ET Checking Config Backups - Time: 00:00:03 <> (31 / 137) 22.62%  ET Checking Config Backups - Time: 00:00:03 <> (36 / 137) 26.27%  ET Checking Config Backups - Time: 00:00:04 <> (37 / 137) 27.00%  ET Checking Config Backups - Time: 00:00:05 <> (41 / 137) 29.92%  ET Checking Config Backups - Time: 00:00:05 <> (46 / 137) 33.57%  ET Checking Config Backups - Time: 00:00:06 <> (51 / 137) 37.22%  ET Checking Config Backups - Time: 00:00:06 <> (55 / 137) 40.14%  ET Checking Config Backups - Time: 00:00:06 <> (56 / 137) 40.87%  ET Checking Config Backups - Time: 00:00:06 <> (61 / 137) 44.52%  ET Checking Config Backups - Time: 00:00:07 <> (66 / 137) 48.17%  ET Checking Config Backups - Time: 00:00:07 <> (71 / 137) 51.82%  ET Checking Config Backups - Time: 00:00:08 <> (76 / 137) 55.47%  ET Checking Config Backups - Time: 00:00:08 <> (81 / 137) 59.12%  ET Checking Config Backups - Time: 00:00:08 <> (86 / 137) 62.77%  ET Checking Config Backups - Time: 00:00:09 <> (91 / 137) 66.42%  ET Checking Config Backups - Time: 00:00:09 <> (96 / 137) 70.07%  ET Checking Config Backups - Time: 00:00:09 <> (99 / 137) 72.26%  ET Checking Config Backups - Time: 00:00:10 <> (101 / 137) 73.72%  E Checking Config Backups - Time: 00:00:10 <> (105 / 137) 76.64%  E Checking Config Backups - Time: 00:00:10 <> (106 / 137) 77.37%  E Checking Config Backups - Time: 00:00:10 <> (111 / 137) 81.02%  E Checking Config Backups - Time: 00:00:11 <> (116 / 137) 84.67%  E Checking Config Backups - Time: 00:00:11 <> (117 / 137) 85.40%  E Checking Config Backups - Time: 00:00:11 <> (119 / 137) 86.86%  E Checking Config Backups - Time: 00:00:11 <> (120 / 137) 87.59%  E Checking Config Backups - Time: 00:00:11 <> (121 / 137) 88.32%  E Checking Config Backups - Time: 00:00:11 <> (123 / 137) 89.78%  E Checking Config Backups - Time: 00:00:11 <> (126 / 137) 91.97%  E Checking Config Backups - Time: 00:00:12 <> (131 / 137) 95.62%  E Checking Config Backups - Time: 00:00:12 <> (132 / 137) 96.35%  E Checking Config Backups - Time: 00:00:12 <> (136 / 137) 99.27%  E Checking Config Backups - Time: 00:00:12 <> (137 / 137) 100.00% Time: 00:00:12
+
+[i] No Config Backups Found.
+
+[!] No WPScan API Token given, as a result vulnerability data has not been output.
+[!] You can get a free API token with 25 daily requests by registering at https://wpscan.com/register
+
+[+] Finished: Sat Nov 26 19:37:52 2022
+[+] Requests Done: 186
+[+] Cached Requests: 7
+[+] Data Sent: 51.887 KB
+[+] Data Received: 19.541 MB
+[+] Memory used: 247.203 MB
+[+] Elapsed time: 00:00:28

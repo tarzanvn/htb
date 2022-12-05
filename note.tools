@@ -1,0 +1,10 @@
+#note.tools
+
+# priv esc analyze
+	- pspy64
+
+# cracking password
+	- gpg
+		gpg2john priKey > hashpr
+
+		john hashpr

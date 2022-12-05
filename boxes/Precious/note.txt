@@ -1,0 +1,14 @@
+# precious
+
+# enum
+- http web service - convert html to pdf
+    - from response the lib is: pdfkit v0.8.6
+    - pdfkit v0.8.6: CVE-2022-25765 command-injection
+        - https://github.com/pdfkit/pdfkit/issues/517
+        - command injection in url params
+
+- command injection without space
+    - use $IFS
+
+- currently i stop at running command with ruby user.
+    - we need to pe to henry and root.

