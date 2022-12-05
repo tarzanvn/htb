@@ -33,3 +33,7 @@
 	#ctrl + z: to run process in background.
 	# enable tab, and ctrl+c; then return the process.
 	stty raw -echo; fg
+	
+	# after exit the shell, the terminal may not be visible
+	# type reset to fix it
+	reset
