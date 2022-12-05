@@ -1,6 +1,6 @@
 # precious
 
-# enum
+## enum
 
     - http web service - convert html to pdf
         - from response the lib is: pdfkit v0.8.6
@@ -10,7 +10,7 @@
                 - this payload: http://localhost:3000/?pwd=$(pwd)&user=$(whoami)
 
 
-# pwn user
+## pwn user
 
     - this payload: http://localhost:3000/?pwd=$(pwd)&user=$(whoami) cant run with the space char
         - command injection without space (payload all the thing)
@@ -25,7 +25,7 @@
         - ssh and get user.txt
 
 
-# pri esc 2 pwn root
+## pri esc 2 pwn root
 
     - sudo -l
         Matching Defaults entries for henry on precious:
